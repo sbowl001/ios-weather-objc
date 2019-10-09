@@ -17,7 +17,7 @@ Please fork and clone this repository. Use the provided Xcode project as it cont
 ### Part 2 - Model/Model Controller
 
 1. Go to [this signup page](https://home.openweathermap.org/users/sign_up) and sign up for a new OpenWeatherMap account. Once you create your account (and you may have to sign in if it doesn't automatically sign you in), go to the "API keys" section of your "My Home" page. Generate a new API key.
-    - Refer to [this page](https://openweathermap.org/forecast16) of the API's documentation. The free version allows you to get the 5 day, 3 hour interval forcast. Look the example JSON [here](https://samples.openweathermap.org/data/2.5/forecast/daily?zip=94040&appid=b6907d289e10d714a6e88b30761fae22) to familiarize yourself with the structure of the dictionary that will be deserialized using `NSJSONSerialization`.
+    - Refer to [this page](https://openweathermap.org/forecast5) of the API's documentation. The free version allows you to get the 5 day, 3 hour interval forcast. Look the example JSON [here](https://samples.openweathermap.org/data/2.5/forecast?zip=94040&appid=b6907d289e10d714a6e88b30761fae22) to familiarize yourself with the structure of the dictionary that will be deserialized using `NSJSONSerialization`.
 
 2. Create a model object that represents a daily forecast. It should include:
     - The name of the city (yes, this is slightly repetitive)
