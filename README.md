@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The goal of this project is to use the OpenWeatherMap API to create an app that will display a 7 day forecast for any zip code the user enters.
+The goal of this project is to use the OpenWeatherMap API to create an app that will display a 5 day forecast for any zip code the user enters.
 
 ## Instructions
 
