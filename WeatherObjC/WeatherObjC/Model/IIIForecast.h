@@ -16,7 +16,7 @@
 -(instancetype)initWithDictionary:(NSDictionary *)dictionary cityName:(NSString *)cityName;
 
 -(instancetype)initWithCityName:(NSString *)cityName
-                           icon:(UIImage *)icon
+                       iconName:(NSString *)iconName
                     temperature:(NSNumber *)temperature;
 
 @property NSString *cityName;

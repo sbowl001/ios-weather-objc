@@ -13,14 +13,14 @@
 //Create a normal memberwise initializer.
 
 -(instancetype)initWithCityName:(NSString *)cityName
-                           icon:(UIImage *)icon
+                           iconName:(NSString *)iconName
                     temperature:(NSNumber *)temperature
 {
     self = [super init];
     
     if (self != nil){
         _cityName = cityName;
-        _icon = icon;
+        _icon = [UIImage imageNamed:iconName];
         _temperature = temperature;
     }
     return self;
@@ -32,11 +32,11 @@
     //dictionary[@"weather"][0][@"icon"];
     //[[[dictionary objectForKey:@"weather"] objectAtIndex:0] objectForKey:@"icon"];
     NSString *iconName = [[[dictionary objectForKey:@"weather"] objectAtIndex:0] objectForKey:@"icon"];
-    UIImage *icon = [UIImage imageNamed:iconName];
+//    UIImage *icon = [UIImage imageNamed:iconName];
     NSNumber *temperature = [[dictionary objectForKey:@"main"] objectForKey:@"temp"];
 //    dictionary[@"main"][@"temp"];
     
-    return [self initWithCityName:(NSString *)cityName icon:(UIImage *)icon temperature:(NSNumber *)temperature];
+    return [self initWithCityName:cityName icon:iconName temperature:temperature];
 }
 
 

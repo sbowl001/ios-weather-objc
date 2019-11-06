@@ -18,4 +18,13 @@
 
 @implementation IIIWeatherCollectionViewCell
 
+-(void)updateViews
+{
+    if (self.forecast != nil) {
+        self.weatherImageView.image = self.forecast.icon;
+        
+        
+    }
+}
+
 @end
