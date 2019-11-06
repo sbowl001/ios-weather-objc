@@ -22,8 +22,8 @@
 -(void)updateViews
 {
     if (self.forecast != nil) {
-        self.weatherImageView.image = self.forecast.image
-        self.temperatureLabel.text = [NSString stringWithFormat:@"%.f", self.forecast.temperature];
+        self.weatherImageView.image = self.forecast.image;
+        self.temperatureLabel.text = [NSString stringWithFormat:@"%@", self.forecast.temperature];
         
         
     }

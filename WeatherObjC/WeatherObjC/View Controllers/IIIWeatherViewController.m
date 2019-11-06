@@ -50,14 +50,33 @@
 
 
 
-//Implement the required UICollectionViewDataSource methods.
+
 //Implement the searchBarSearchButtonClicked method to trigger your fetch forecast method from the model controller. Reload the table view on the main queue in the completion block of the fetch forecast method call.
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    int zipcode = [searchBar.text intValue];
+//    [self.forecastController fetchForecastWithZipCode:searchBar.text completion:completion:^(NSError * _Nonnull error){
+    if (zipcode) {
+    [self.forecastController fetchForecastWithZipCode:zipcode completion:^(NSError * _Nonnull error) {
+      
+        dispatch_async(dispatch_get_main_queue(),
+                       ^{
+            [self.collectionView reloadData];
+        });
+    }];
+    }
+}
+
+//Implement the required UICollectionViewDataSource methods.
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath
 {
     IIIWeatherCollectionViewCell *cell = (IIIWeatherCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"WeatherCell" forIndexPath:indexPath];
     
-    cell.forecast = 
+    cell.forecast = self.forecastController.forecasts[indexPath.row];
+    [cell updateViews];
+    return cell;
 }
 
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {

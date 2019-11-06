@@ -15,6 +15,8 @@
 
 @property NSArray *forecasts;
 
-//- (void)searchForWeatherWithZipcode:(NSString *)zipcode completion:(void (^)(NSError *error))completion;
+-(instancetype)init;
+-(void)fetchForecastWithZipCode:(int)zipCode completion:(void(^)(NSError *error))completion;
+
 @end
  
