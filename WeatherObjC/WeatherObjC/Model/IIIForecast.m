@@ -20,7 +20,7 @@
     
     if (self != nil){
         _cityName = cityName;
-        _icon = [UIImage imageNamed:iconName];
+        _image = [UIImage imageNamed:iconName];
         _temperature = temperature;
     }
     return self;
@@ -36,7 +36,7 @@
     NSNumber *temperature = [[dictionary objectForKey:@"main"] objectForKey:@"temp"];
 //    dictionary[@"main"][@"temp"];
     
-    return [self initWithCityName:cityName icon:iconName temperature:temperature];
+    return [self initWithCityName:cityName iconName:iconName temperature:temperature];
 }
 
 

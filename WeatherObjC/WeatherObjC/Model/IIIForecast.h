@@ -20,7 +20,7 @@
                     temperature:(NSNumber *)temperature;
 
 @property NSString *cityName;
-@property UIImage *icon;
+@property (nonatomic, copy, readonly) UIImage *image;
 @property NSNumber *temperature;
 
 @end
