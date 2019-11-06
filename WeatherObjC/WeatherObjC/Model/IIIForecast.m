@@ -29,9 +29,12 @@
 //Create an initializer that takes in a dictionary and the city name. (Refer to the example JSON again, and/or ask a PM if you're unclear on why you should pass the city name in separately)
 -(instancetype)initWithDictionary:(NSDictionary *)dictionary cityName:(NSString *)cityName
 {
-    NSString *iconName = [dictionary[@"weather"] objectAtIndex:0][@"icon"];
+    //dictionary[@"weather"][0][@"icon"];
+    //[[[dictionary objectForKey:@"weather"] objectAtIndex:0] objectForKey:@"icon"];
+    NSString *iconName = [[[dictionary objectForKey:@"weather"] objectAtIndex:0] objectForKey:@"icon"];
     UIImage *icon = [UIImage imageNamed:iconName];
-    NSNumber *temperature = dictionary[@"main"][@"temp"];
+    NSNumber *temperature = [[dictionary objectForKey:@"main"] objectForKey:@"temp"];
+//    dictionary[@"main"][@"temp"];
     
     return [self initWithCityName:(NSString *)cityName icon:(UIImage *)icon temperature:(NSNumber *)temperature];
 }

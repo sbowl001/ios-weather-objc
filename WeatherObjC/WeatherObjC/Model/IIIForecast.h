@@ -13,7 +13,7 @@
 
 @interface IIIForecast : NSObject
 
--(instancetype)initWithDictionary:(NSDictionary *)dictionary name:(NSString *)cityName;
+-(instancetype)initWithDictionary:(NSDictionary *)dictionary cityName:(NSString *)cityName;
 
 -(instancetype)initWithCityName:(NSString *)cityName
                            icon:(UIImage *)icon
