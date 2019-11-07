@@ -25,7 +25,7 @@
 //
 //Add static constants to the model controller for the base url and your API key.
 
-static NSString *const baseURLString =@"api.openweathermap.org/data/2.5/forecast";
+static NSString *const baseURLString =@"https://api.openweathermap.org/data/2.5/forecast";
 static NSString *const apiKey = @"33ac6cf259dcbf0b86d88ab372320609";
 //Create a function that will perform a data task to get the forecasts. This should take in a zip code, and have a completion block with an error.
 
@@ -43,11 +43,11 @@ static NSString *const apiKey = @"33ac6cf259dcbf0b86d88ab372320609";
     
     NSURLQueryItem *zipCodeItem = [NSURLQueryItem queryItemWithName:@"zip" value:zipCodeString];
     
-    NSURLQueryItem *appIDItem = [NSURLQueryItem queryItemWithName:@"units" value:@"imperial"];
-    NSURLQueryItem *unitsItem = [NSURLQueryItem queryItemWithName:@"APPID" value:apiKey];
+    NSURLQueryItem *unitsItem = [NSURLQueryItem queryItemWithName:@"units" value:@"imperial"];
+    NSURLQueryItem *appIDItem = [NSURLQueryItem queryItemWithName:@"appid" value:apiKey];
     
  
-    URLComponents.queryItems = @[zipCodeItem, appIDItem, unitsItem];
+    URLComponents.queryItems = @[zipCodeItem, unitsItem, appIDItem];
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL: URLComponents.URL];
     
